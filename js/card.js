@@ -1,6 +1,7 @@
-const card = async () => {
+const card = async (id) => {
+  console.log(id);
   const res = await fetch(
-    "https://openapi.programming-hero.com/api/videos/category/1000"
+    `https://openapi.programming-hero.com/api/videos/category/${id}`
   );
   const data = await res.json();
 
@@ -12,12 +13,13 @@ displayCardData = (cardData) => {
   const cardDisplay = document.getElementById("card-display");
   cardData.forEach((data) => {
     //2) What to add
+
     const displayCard = document.createElement("div");
 
     displayCard.innerHTML = `
     <div class="card w-96 bg-base-100 shadow-xl ">
         <figure>
-          <img class="h-[100%] w-[100%]" src="${data.thumbnail}" />
+          <img class="h-[220px] w-[410px]" src="${data.thumbnail}" />
         </figure>
         <div class="card-body">
           <div class="flex gap-4">
@@ -33,7 +35,7 @@ displayCardData = (cardData) => {
         </div>
       </div>
     `;
-    // 3) AppendChild
+
     cardDisplay.appendChild(displayCard);
   });
 };
