@@ -1,5 +1,4 @@
 const card = async (id) => {
-  console.log(id);
   const res = await fetch(
     `https://openapi.programming-hero.com/api/videos/category/${id}`
   );
@@ -11,6 +10,7 @@ const card = async (id) => {
 displayCardData = (cardData) => {
   //1) Where to add
   const cardDisplay = document.getElementById("card-display");
+  cardDisplay.innerHTML = "";
   cardData.forEach((data) => {
     //2) What to add
 

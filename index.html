@@ -18,9 +18,12 @@
       <!-- Navbar -->
 
       <nav>
-        <ul class="flex justify-between">
+        <ul
+          class="flex lg:justify-between lg:flex-row flex-col gap-3 items-center"
+        >
           <li><img src="./imgs/Logo.png" alt="" /></li>
-          <li><button class="btn">Sort by view</button></li>
+          <li><button id="sortByViews" class="btn">Sort by view</button></li>
+
           <li>
             <button onclick="handleBlog()" class="btn btn-error">Blog</button>
           </li>
@@ -33,12 +36,15 @@
 
     <main>
       <!-- Show Catagory  -->
-      <div class="flex justify-center gap-14" id="catagory-display"></div>
+      <div
+        class="flex lg:justify-center lg:gap-14 justify-center gap-3"
+        id="catagory-display"
+      ></div>
 
       <!-- Display card -->
       <div
         id="card-display"
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 my-[50px]"
+        class="grid -ml-24 lg:-ml-0 grid-cols-1 md:grid-cols-1 md:ml-[80px] lg:grid-cols-4 gap-4 my-[50px]"
       ></div>
     </main>
 

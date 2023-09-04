@@ -16,13 +16,19 @@ const displayCatagories = (datas) => {
     // 2) What to add
     const catagoryCard = document.createElement("div");
     catagoryCard.innerHTML = `
-         <button  class="btn">${data.category} </button>
+         <button  class="btn" id="${data.category}" data-id="${data.category_id}">${data.category} </button>
        
         `;
 
     // 3) AppendChild/ Append the card to the display element
     catagoryDisplay.appendChild(catagoryCard);
-    fun(data.category_id);
+    const button = document.querySelectorAll("button");
+    button.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const id = btn.getAttribute("data-id");
+        fun(id);
+      });
+    });
   });
 };
 
