@@ -36,4 +36,5 @@ const fun = (rec) => {
   const cataRes = rec;
   card(cataRes);
 };
+
 catagory();
